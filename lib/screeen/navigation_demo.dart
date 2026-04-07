@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:metapi/screeen/Gridview_practice.dart';
 import 'package:metapi/screeen/counter_demo.dart';
 import 'package:metapi/screeen/quotes_screen.dart';
+import 'package:metapi/screeen/text_field_user_input.dart';
 
 class NavigationDemo extends StatelessWidget {
   const NavigationDemo({super.key});
@@ -57,6 +58,21 @@ class NavigationDemo extends StatelessWidget {
               onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context){
                   return QuotesScreen();
+                }));
+              },
+            ),
+          ),
+          Card(
+            color: Colors.teal,
+            child: ListTile(
+              leading: CircleAvatar(
+                child: (Text("4")),
+              ),
+              title: Text("User input"),
+              trailing: Icon((Icons.arrow_forward)),
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return TextFieldUserInput();
                 }));
               },
             ),
