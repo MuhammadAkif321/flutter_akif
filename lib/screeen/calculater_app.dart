@@ -20,8 +20,10 @@ class _CalculaterAppState extends State<CalculaterApp> {
           Padding(
             padding: const EdgeInsets.all(20),
             child: TextField(
-              keyboardType: .phone,
+              keyboardType: .number,
               decoration: InputDecoration(
+                suffixIconColor: Colors.blue,
+                prefixIconColor: Colors.pink,
                 labelText: "Number 1",
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.person),
@@ -33,8 +35,10 @@ class _CalculaterAppState extends State<CalculaterApp> {
           Padding(
             padding: const EdgeInsets.all(20),
             child: TextField(
-              keyboardType: .phone,
+              keyboardType: .number,
               decoration: InputDecoration(
+                suffixIconColor: Colors.blue,
+                prefixIconColor: Colors.pink,
                 labelText: "Number 2",
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.person),
