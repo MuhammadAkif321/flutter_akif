@@ -8,6 +8,9 @@ class CalculaterApp extends StatefulWidget {
 }
 
 class _CalculaterAppState extends State<CalculaterApp> {
+  int result = 12;
+  var firstcontroller = TextEditingController();
+  var lastcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +24,8 @@ class _CalculaterAppState extends State<CalculaterApp> {
             padding: const EdgeInsets.all(20),
             child: TextField(
               keyboardType: .number,
+              controller:firstcontroller ,
+
               decoration: InputDecoration(
                 suffixIconColor: Colors.blue,
                 prefixIconColor: Colors.pink,
@@ -36,6 +41,8 @@ class _CalculaterAppState extends State<CalculaterApp> {
             padding: const EdgeInsets.all(20),
             child: TextField(
               keyboardType: .number,
+              controller: lastcontroller,
+
               decoration: InputDecoration(
                 suffixIconColor: Colors.blue,
                 prefixIconColor: Colors.pink,
@@ -50,18 +57,55 @@ class _CalculaterAppState extends State<CalculaterApp> {
           Row(
             mainAxisAlignment: .spaceEvenly,
             children: [
-              ElevatedButton(onPressed: (){}, child: Text("+",style: TextStyle(fontSize: 20),)),
-              ElevatedButton(onPressed: (){}, child: Text("-",style: TextStyle(fontSize: 20),)),
-              ElevatedButton(onPressed: (){}, child: Text("*",style: TextStyle(fontSize: 20),)),
-              ElevatedButton(onPressed: (){}, child: Text("/",style: TextStyle(fontSize: 20),)),
+              ElevatedButton(onPressed: (){
+                String firstName = firstcontroller.text.trim();
+                int f = int.parse(firstName);
+                String lastName = lastcontroller.text.trim();
+                int l = int.parse(lastName);
+                setState(() {
+                  result = f+l;
+                });
+
+                },
+
+                  child: Text("+",style: TextStyle(fontSize: 20),)),
+              ElevatedButton(onPressed: (){
+                String firstName = firstcontroller.text.trim();
+                int f = int.parse(firstName);
+                String lastName = lastcontroller.text.trim();
+                int l = int.parse(lastName);
+                setState(() {
+                  result = f-l;
+                });
+              }, child: Text("-",style: TextStyle(fontSize: 20),)),
+              ElevatedButton(onPressed: (){
+                String firstName = firstcontroller.text.trim();
+                int f = int.parse(firstName);
+                String lastName = lastcontroller.text.trim();
+                int l = int.parse(lastName);
+                setState(() {
+                  result = f*l;
+                });
+              }, child: Text("*",style: TextStyle(fontSize: 20),)),
+              ElevatedButton(onPressed: (){
+                String firstName = firstcontroller.text.trim();
+                int f = int.parse(firstName);
+                String lastName = lastcontroller.text.trim();
+                int l = int.parse(lastName);
+                setState(() {
+                  result = f~/l;
+                });
+              }, child: Text("/",style: TextStyle(fontSize: 20),)),
             ],
           ),
           Padding(
             padding: const EdgeInsets.all(20),
-            child: ElevatedButton(onPressed: (){}, child: Text("CLEAR",style: TextStyle(fontSize: 30),)),
+            child: ElevatedButton(onPressed: (){
+
+            }, child: Text("CLEAR",style: TextStyle(fontSize: 30),)),
           ),
 
-          Text("Result",style: TextStyle(fontSize: 30),),
+          Text("$result",style: TextStyle(fontSize: 17),)
 
 
         ],
