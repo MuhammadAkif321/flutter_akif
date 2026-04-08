@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metapi/screeen/Gridview_practice.dart';
+import 'package:metapi/screeen/calculater_app.dart';
 import 'package:metapi/screeen/counter_demo.dart';
 import 'package:metapi/screeen/quotes_screen.dart';
 import 'package:metapi/screeen/text_field_user_input.dart';
@@ -73,6 +74,22 @@ class NavigationDemo extends StatelessWidget {
               onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context){
                   return TextFieldUserInput();
+                }));
+              },
+            ),
+          ),
+
+          Card(
+            color: Colors.teal,
+            child: ListTile(
+              leading: CircleAvatar(
+                child: (Text("5")),
+              ),
+              title: Text("Calculator App"),
+              trailing: Icon((Icons.arrow_forward)),
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return CalculaterApp();
                 }));
               },
             ),

@@ -29,8 +29,19 @@ class _TextFieldUserInputState extends State<TextFieldUserInput> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: TextField(
+              keyboardType: .phone,
+              decoration: InputDecoration(
 
-
+                labelText: "Phone number",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.phone),
+                suffixIcon: Icon(Icons.eighteen_mp),
+              ),
+            ),
+          ),
 
 
           Padding(
